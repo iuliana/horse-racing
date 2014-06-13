@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>IntentHQ - Horse Racing</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style>
+      fieldset {
+        float: left;
+        margin: 20px;
+        padding: 20px;
+        width: 200px;
+        height: 300px;
+      }
+      textarea, pre {
+        width: 100%;
+        height: 90%;
+      }
+      input {
+        display: block;
+        clear: left;
+      }
+  </style>
+</head>
+<body>
+  <h1>Example solution:</h1>
+  <form action="exercise">
+    <fieldset>
+        <legend>Input:</legend>
+        <textarea name="input" th:text="${input}"></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Output:</legend>
+      <pre th:text="${output}" />
+    </fieldset>
+    <input type="submit" value="Go!"/>
+  </form>
+</body>
+</html>

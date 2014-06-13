@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>IntentHQ - Horse Racing</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <h1>Horse Racing Exercise</h1>
+  <p>
+    We are going to play a special version of the horse racing derby game (better known as Kentucky Derby)
+    you can find in several fun fairs (see picture below).
+  </p>
+  <p>
+    <img src="http://www.funfairridehire.com/tuckers_funfair_rides/kentucky-derby-game.jpg"/>
+  </p>
+
+  <h2>Considerations</h2>
+  <ul>
+    <li>
+      The track length is 1 furlong.
+    </li>
+    <li>
+      There will be a maximum of 7 horses playing. Consequently, the track has 7 lanes in it (numbered from 1 to 7).
+    </li>
+    <li>
+      Each horse has a name and it will be in one lane.
+    </li>
+    <li>
+      To move a horse each virtual player tosses a ball to a set of holes, each hole has a number. This is the number
+      of yards the horse will advance.
+    </li>
+    <li>
+      There are 11 holes for each lane. The numbers in the holes are the following: 5, 5, 5, 5, 10, 10, 10, 20, 20, 40, 60
+    </li>
+    <li>
+      The winner will be the first horse to reach the goal (i.e. the first horse to go acrross 1 furlong)
+    </li>
+    <li>
+      The race ends when the first horse reaches the goal. The positions of the other horses will stand frozen even
+      if more balls are thrown.
+    </li>
+  </ul>
+
+  <h2>Input</h2>
+  <ul>
+    <li>
+      The first line of the input will contain the names of the horses ordered according to the lane they will be running in:
+      <code>HORSE1, HORSE2, ....</code>
+    </li>
+    <li>
+      The rest of the lines of the input will represent a ball throw. The format will be: <code>LANE_NUMBER YARDS</code>.
+    </li>
+  </ul>
+
+  <h2>Output</h2>
+  <p>
+    The output will be the list of horses ordered by position in the race:
+    <pre>
+      Position, Lane, Horse name
+      1, 2, HORSE2
+      2, 5, HORSE5
+    </pre>
+  </p>
+
+  <h2>Example test case</h2>
+  <p>
+    Test Input:
+  </p>
+  <pre>
+    Star, Dakota, Cheyenne, Misty, Spirit
+    1 60
+    3 5
+    1 60
+    4 5
+    4 10
+    2 5
+    5 10
+    1 60
+    3 20
+    7 10
+    1 40
+    2 60
+  </pre>
+  <p>
+    Expected Output:
+  </p>
+  <pre>
+    Position, Lane, Horse name
+    1, 1, Star
+    2, 3, Cheyenne
+    3, 4, Misty
+    4, 5, Spirit
+    5, 2, Dakota
+  </pre>
+
+  <h2>What you need to submit</h2>
+  <ul>
+    <li>
+      Source code
+    </li>
+    <li>
+      Unit tests that cover most all of the functionality
+    </li>
+    <li>
+      Validation against input data
+    </li>
+    <li>
+      Demonstrated error handling
+    </li>
+    <li>
+      Comments as deemed necessary
+    </li>
+    <li>
+      Documentation (as necessary)
+    </li>
+    <li>
+      Any assumptions that you have made
+    </li>
+  </ul>
+  <h3>Optionally, you can also include:</h3>
+  <ul>
+    <li>
+      Brief explanation of your solution (such as design considerations)
+    </li>
+    <li>
+      Github url of the repo where you have the exercise
+    </li>
+    <li>
+      Class diagrams
+    </li>
+  </ul>
+</body>
+</html>
