@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <title>IntentHQ - Horse Racing</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style>
+    fieldset {
+      float: left;
+      margin: 20px;
+      padding: 20px;
+      width: 200px;
+      height: 300px;
+    }
+
+    .problem {
+      color: #D8000C;
+      background-color: #FFBABA;
+    }
+  </style>
+</head>
+<body>
+<h1>Problem</h1>
+  <fieldset>
+    <legend>Problem:</legend>
+    <label name="problem" class="problem" th:text="${problem}"></label>
+  </fieldset>
+</body>
+</html>
