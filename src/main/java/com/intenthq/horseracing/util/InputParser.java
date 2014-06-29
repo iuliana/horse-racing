@@ -21,6 +21,12 @@ public class InputParser {
 
     private Logger logger = LoggerFactory.getLogger("com.intenthq.horseracing");
 
+    /**
+     * Method that parses the input argument, checks the format and if the format is accepted
+     * a map with <LaneNumber, Contestant> is created and a list with BallThrow instances
+     * @param input
+     * @throws InvalidInputException
+     */
     public void buildInput(String input) throws InvalidInputException {
         contestantList = new LinkedHashMap<>();
         String[] lines = input.split("\\r?\\n");
