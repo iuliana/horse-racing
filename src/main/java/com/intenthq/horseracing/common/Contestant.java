@@ -1,12 +1,14 @@
 package com.intenthq.horseracing.common;
 
 /**
- * Created by iuliana on 6/26/14.
+ * User: iuliana cosmina
+ * Date: 6/29/14
+ * Description: Class describing a Contestant.
  */
 public class Contestant {
     private int lane;
     private String horseName;
-    private int position;
+    private Integer distance;
 
     /**
      * Default Constructor
@@ -18,6 +20,7 @@ public class Contestant {
         Contestant contestant = new Contestant();
         contestant.setLane(lane);
         contestant.setHorseName(horseName);
+        contestant.setDistance(0);
         return contestant;
     }
 
@@ -37,12 +40,17 @@ public class Contestant {
         this.horseName = horseName;
     }
 
-    public int getPosition() {
-        return position;
+    public Integer getDistance() {
+        return distance;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public boolean move(int distance) {
+        this.distance += distance;
+        return distance >= 220;
     }
 
     @Override
@@ -50,7 +58,7 @@ public class Contestant {
         return "Contestant{" +
                 "lane=" + lane +
                 ", horseName='" + horseName + '\'' +
-                ", position=" + position +
+                ", distance=" + distance +
                 '}';
     }
 }

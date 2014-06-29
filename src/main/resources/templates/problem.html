@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
   <title>IntentHQ - Horse Racing</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <style>
     fieldset {
       float: left;
@@ -20,9 +20,11 @@
 </head>
 <body>
 <h1>Problem</h1>
-  <fieldset>
-    <legend>Problem:</legend>
-    <label name="problem" class="problem" th:text="${problem}"></label>
-  </fieldset>
+<fieldset>
+  <legend>Problem:</legend>
+  <label name="problem" class="problem" th:text="${problem}"></label>
+</fieldset>
+<a th:href="@{/horse-racing/exercise}">Back to input page</a>
 </body>
 </html>
+
