@@ -8,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -35,13 +34,19 @@ public class HorseRacingController {
     }
 
     @RequestMapping("/horse-racing/exercise")
-    public String exercise(@RequestParam(value = "input", required = false) String input, Model model) {
+    public String exercise(@RequestParam(value = "input", required = false) String input, ModelMap model) {
         try {
             if (!StringUtils.isEmpty(input)) {
                 logger.debug(input);
                 inputParser.buildInput(input);
                 model.addAttribute(INPUT_ATT, input);
+
                 List<Contestant> result = startRace(inputParser);
+
+                if( result.get(0).getDistance() < 220) {
+                    throw new InvalidInputException("Incomplete race.");
+                }
+
                 StringBuilder outputBuilder = new StringBuilder("Position, Lane, Horse name\n");
                 int position = 1;
                 for (ListIterator<Contestant> li = result.listIterator(); li.hasNext(); ) {
@@ -95,7 +100,7 @@ public class HorseRacingController {
      * @return
      */
     @ExceptionHandler(Exception.class)
-    public String handleError(Model model, Exception e) {
+    public String handleError(ModelMap model, Exception e) {
         model.addAttribute(PROBLEM, "Unexpected internal error. Please contact maintenance team." + e.getMessage());
         return "problem";
     }
